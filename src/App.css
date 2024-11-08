@@ -1,58 +1,66 @@
-/* src/App.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: #333;
-  padding: 1em;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2em;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
+/* Center the form in the middle of the screen */
 .hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f2f5; /* Light gray background */
+}
+
+/* Style the card */
+.form-card {
+  background-color: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 400px; /* Set a fixed max width for the card */
+  width: 100%;
   text-align: center;
-  margin: 2em;
+  box-sizing: border-box;
 }
 
-.hero-section input {
-  margin: 1em;
-  padding: 0.5em;
-  display: block;
+/* Title styling */
+.form-card h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
 }
 
-.hero-section button {
-  padding: 0.5em 1em;
-  background-color: #28a745;
-  color: white;
+/* Input field styling */
+.input-field {
+  width: 100%; /* Ensure inputs take full width within the card */
+  max-width: 100%; /* Prevent inputs from overflowing */
+  padding: 0.85rem;
+  margin: 0.75rem 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%; /* Make button full width */
+  padding: 0.9rem;
+  margin-top: 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.hero-section button:hover {
-  background-color: #218838;
-}
-
-.students-page {
-  padding: 2em;
-}
-
-.student-card {
-  border: 1px solid #ccc;
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 5px;
+.submit-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
