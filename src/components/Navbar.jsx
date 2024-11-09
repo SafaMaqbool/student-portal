@@ -1,30 +1,23 @@
-// src/components/Navbar.js
+// Navbar.js
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-const Navbar = ({ user }) => {
+const Navbar = () => {
+  const { currentUser } = useAuth();
+
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        {user && (
-          <li>
-            <Link to="/students">Students</Link>
-          </li>
-        )}
-        {!user && (
-          <>
-            <li>
-              <Link to="/signup">Sign Up</Link>
-            </li>
-            <li>
-              <Link to="/signin">Sign In</Link>
-            </li>
-          </>
-        )}
-      </ul>
+      <h1>Quiz App</h1>
+      <Link to="/">Home</Link>
+      {currentUser ? (
+        <>
+          <Link to="/profile">Profile</Link>
+          <Link to="/quiz">Quiz</Link>
+        </>
+      ) : (
+        <Link to="/login">Login</Link>
+      )}
     </nav>
   );
 };
